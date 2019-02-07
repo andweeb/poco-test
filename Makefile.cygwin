@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -Wall -Werror 
+INC = -I/usr/include/Poco/Net/ \
+	      -I/usr/include/Poco/Foundation/ \
+		  -I/usr/include/Poco/JSON/
+LIB = -L/usr/lib/
+LINK = -lPocoFoundation -lPocoNet -lPocoJSON
+SRC = main.cpp ClientHandler.cpp
+
+main: 
+	$(CC) $(CFLAGS) $(INC) -o main $(SRC) $(DEPS) $(LIB) $(LINK)
+
+clean:
+	rm main main.o 
